@@ -37,6 +37,7 @@ export class DashboardComponent {
 
   addTask() {
     this.taskObj.task_name = this.addTaskValue
+    this.addTaskValue = ''
     this.crudService.addTask(this.taskObj).subscribe(res => {
       this.ngOnInit();
     }, err => {
@@ -48,6 +49,15 @@ export class DashboardComponent {
     this.taskObj.task_name = this.editTaskValue;
 
     this.crudService.editTask(this.taskObj).subscribe(res => {
+      this.ngOnInit();
+    }, err => {
+      alert("Faled to update task")
+    })
+  }
+  
+  finishTask(etask : Task) {
+    
+    this.crudService.editTask(etask).subscribe(res => {
       this.ngOnInit();
     }, err => {
       alert("Faled to update task")
@@ -67,3 +77,4 @@ export class DashboardComponent {
     this.editTaskValue = etask.task_name
   }
 }
+

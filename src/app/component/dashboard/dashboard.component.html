@@ -1,8 +1,39 @@
-<mat-card>
-    <mat-card-content>Simple card</mat-card-content>
-  </mat-card>
-  
-<div class="container-fluid bg-light">
+<div class="container">
+    <mat-card style="padding: 20px; margin: 20px;">
+        <mat-card-header>
+            <mat-card-title>To Do List</mat-card-title>
+        </mat-card-header>
+        <mat-form-field class="example-form-field">
+            <mat-label>Enter Task</mat-label>
+            <input matInput type="text" [(ngModel)]="addTaskValue" (keyup.enter)="addTask()">
+            <button  matSuffix mat-icon-button aria-label="Clear" type="button" (click)="addTask()">
+              <mat-icon>add</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-card-content>
+            <div class="todo-list">
+                <mat-divider></mat-divider>
+                <div class="todo-item" *ngFor="let task of taskArr">
+    
+                    <mat-checkbox (click)="finishTask(task)" class="todo-name" [ngClass]="{'finished': task.finished}" [(ngModel)]="task.finished" >{{ task.task_name }}</mat-checkbox>
+                    <div class="todo-action">
+                        <button mat-icon-button color="primary" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal" (click)="call(task)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="deleteTask(task)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+<!-- ikut tutorial -->
+<!-- <div class="container-fluid bg-light">
     <div class="container bg-light">
         
         <div class="row mt-4" style="height: 500px;">
@@ -57,4 +88,4 @@
 
         </div>
     </div>
-</div>
+</div> -->

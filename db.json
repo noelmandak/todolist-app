@@ -1,12 +1,24 @@
 {
   "task": [
     {
+      "id": 1,
+      "task_name": "Kerjakan PR Reduksi dimensi ",
+      "finished": false
+    },
+    {
       "id": 2,
-      "task_name": "Welcome to code "
+      "task_name": "tidur",
+      "finished": false
     },
     {
       "id": 3,
-      "task_name": "Create Angular Aplication"
+      "task_name": "Belajar Angular",
+      "finished": false
+    },
+    {
+      "id": 4,
+      "task_name": "Kumpul Perbaiki Github",
+      "finished": false
     }
   ]
 }

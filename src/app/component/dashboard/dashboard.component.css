@@ -1,0 +1,14 @@
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+
+}
+.todo-name {
+    flex-grow: 1;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.finished {
+    text-decoration-line: line-through;
+}
