@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialDesignModule } from './material-design/material-design.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule, HttpClientModule
+    FormsModule, HttpClientModule, BrowserAnimationsModule, MaterialDesignModule
   ],
   providers: [],
   bootstrap: [AppComponent]
